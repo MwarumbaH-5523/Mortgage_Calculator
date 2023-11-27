@@ -11,13 +11,21 @@ public class Main {
         float annualInterest = (float) readNumber("Annual Interest Rate: ",1,30);
         byte years = (byte) readNumber("Period(Years): ",1,30);
 
-        double Mortgage = calculateMortgage(principal,annualInterest,years);
+        printMortgage(principal, annualInterest, years);
+        printPaymentMethod(years, principal, annualInterest);
+
+    }
+
+    private static void printMortgage(int principal, float annualInterest, byte years) {
+        double Mortgage = calculateMortgage(principal, annualInterest, years);
         String mortgageFormatted = NumberFormat.getCurrencyInstance().format(Mortgage);
         System.out.println();
         System.out.println("MORTGAGE");
         System.out.println("--------");
         System.out.println("Monthly Payments : "+ mortgageFormatted);
+    }
 
+    private static void printPaymentMethod(byte years, int principal, float annualInterest) {
         System.out.println();
         System.out.println("PAYMENT SCHEDULE");
         System.out.println("----------------");
@@ -25,10 +33,9 @@ public class Main {
             double balance = calculateBalance(principal, annualInterest, years, month);
             System.out.println(NumberFormat.getCurrencyInstance().format(balance));
         }
+    }
 
-        }
-
-        public static double readNumber(String prompt,double min,double max){
+    public static double readNumber(String prompt,double min,double max){
             Scanner scanner = new Scanner(System.in);
             double value;
         while (true) {
