@@ -10,7 +10,7 @@ public class Main {
         Scanner scanner = new Scanner(System.in);
 
         System.out.println("Enter Principal amount");
-        System.out.print("Principal : ");
+        System.out.print("Principal($1K-1M) : ");
         int principal = scanner.nextInt();
 
         System.out.println("Enter Annual Interest Rate");
