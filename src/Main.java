@@ -2,6 +2,9 @@ import java.text.NumberFormat;
 import java.util.Scanner;
 
 public class Main {
+    final static byte MONTHS_IN_YEAR = 12;
+    final static byte PERCENT = 100;
+
     public static void main(String[] args) {
 
         int principal = (int) readNumber("Principal: ",1000,1000000);
@@ -10,7 +13,18 @@ public class Main {
 
         double Mortgage = calculateMortgage(principal,annualInterest,years);
         String mortgageFormatted = NumberFormat.getCurrencyInstance().format(Mortgage);
-        System.out.println("Mortgage : "+ mortgageFormatted);
+        System.out.println();
+        System.out.println("MORTGAGE");
+        System.out.println("--------");
+        System.out.println("Monthly Payments : "+ mortgageFormatted);
+
+        System.out.println();
+        System.out.println("PAYMENT SCHEDULE");
+        System.out.println("----------------");
+        for (short month = 1; month <= years * MONTHS_IN_YEAR; month++) {
+            double balance = calculateBalance(principal, annualInterest, years, month);
+            System.out.println(NumberFormat.getCurrencyInstance().format(balance));
+        }
 
         }
 
@@ -33,9 +47,6 @@ public class Main {
                 float annualInterest,
                 byte years){
 
-            final byte MONTHS_IN_YEAR = 12;
-            final byte PERCENT = 100;
-
             short numberOfPayments = (short) (years * MONTHS_IN_YEAR);
             float monthlyInterest = annualInterest / PERCENT / MONTHS_IN_YEAR;
 
@@ -44,4 +55,23 @@ public class Main {
                     /(Math.pow(1+monthlyInterest,numberOfPayments)-1);
             return Mortgage;
         }
+
+        public static double calculateBalance(
+                int principal,
+                float annualInterest,
+                byte years,
+                short numberOfPaymentsMade){
+        // B =L[(1+c)^n - (1+c)^p] / [(1+c)^n-1]
+
+            short numberOfPayments = (short) (years * MONTHS_IN_YEAR);
+            float monthlyInterest = annualInterest / PERCENT / MONTHS_IN_YEAR;
+
+            double balance = principal
+                    * (Math.pow(1 + monthlyInterest,numberOfPayments)
+                    - Math.pow(1 + monthlyInterest,numberOfPaymentsMade))
+                    / (Math.pow(1 + monthlyInterest,numberOfPayments) - 1);
+
+            return balance;
+        }
+
     }

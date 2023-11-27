@@ -4,8 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8a7f2d36-a284-4151-8de6-8d5c829447d4" name="Changes" comment="Adding some control features in the code.">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="8a7f2d36-a284-4151-8de6-8d5c829447d4" name="Changes" comment="Refactoring of the code separating repetitive code lines and grouping similar functionality of the code.">
       <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -65,7 +64,23 @@
       <option name="project" value="LOCAL" />
       <updated>1701068293211</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Added coded validation checks for the Mortgage calculator.">
+      <option name="closed" value="true" />
+      <created>1701070173021</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1701070173022</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Refactoring of the code separating repetitive code lines and grouping similar functionality of the code.">
+      <option name="closed" value="true" />
+      <created>1701077591051</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1701077591051</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -82,6 +97,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Adding new files" />
     <MESSAGE value="Adding some control features in the code." />
-    <option name="LAST_COMMIT_MESSAGE" value="Adding some control features in the code." />
+    <MESSAGE value="Added coded validation checks for the Mortgage calculator." />
+    <MESSAGE value="Refactoring of the code separating repetitive code lines and grouping similar functionality of the code." />
+    <option name="LAST_COMMIT_MESSAGE" value="Refactoring of the code separating repetitive code lines and grouping similar functionality of the code." />
   </component>
 </project>
